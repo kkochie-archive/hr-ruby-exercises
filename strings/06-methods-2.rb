@@ -31,3 +31,14 @@ For example:
 
 Apply the helper method in completing your main method.
 =end
+
+def strike(str)
+  "<strike>#{str}</strike>"
+end
+
+def mask_article(str, arr)
+  arr.map do |word|
+    str.gsub!(word, strike(word)) if str.includes? word
+  end
+  str
+end
