@@ -23,8 +23,7 @@ It is guaranteed that number of items in animals array is greater than the value
 
 =end
 
-# List animal keys and values starting from specified index which is actually the same number since starts at 0. So skipping 1 startis at index 1. 
-
+# Have to add skip and index together to account for element index places dropped
 def skip_animals(animals, skip)
-  animals.each_with_index {|animal,}
+  animals.drop(skip).map.with_index {|animal, index| "#{skip+index}:#{animal}" }
 end
