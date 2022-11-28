@@ -42,4 +42,18 @@ Sample Output:
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
-# Determine if number is palindrome. If so add to array. Return array when it hits N elements.
+# #prime? is available as a method on objects of class Integer in the Ruby core library. Use this for testing if a number is prime. 5.prime? # => true
+# The Prime class is more useful for generating prime numbers. Prime.first(5) # => [2, 3, 5, 7, 11]
+
+# Determine if number is prime. If so, check if palindrome. Return first N elements.
+
+
+require 'prime'
+
+palindrome_arr = -> (n) do 
+  Prime.lazy.select { |x| x if x.to_s == x.to_s.reverse }.first(n) 
+end
+
+n = gets.to_i
+p palindrome_arr.(n)
+
